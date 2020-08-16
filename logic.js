@@ -14,6 +14,8 @@ function runQuery(numArticles, queryURL) {
     $.ajax({ url: queryURL, method: "GET" })
         .done(function (NYTData) {
 
+            $('#wellSection').empty();
+
 
             for (var i = 0; i < numArticles; i++) {
                 console.log(NYTData.response.docs[i].headline.main);
