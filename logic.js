@@ -15,12 +15,19 @@ function runQuery(numArticles, queryURL) {
         .done(function (NYTData) {
 
 
-            for (var i = 0; i <numArticles; i++) {
+            for (var i = 0; i < numArticles; i++) {
                 console.log(NYTData.response.docs[i].headline.main);
                 console.log(NYTData.response.docs[i].section_name);
                 console.log(NYTData.response.docs[i].pub_date);
                 console.log(NYTData.response.docs[i].byline.original);
                 console.log(NYTData.response.docs[i].web_url);
+
+                var wellSection = $('<div>');
+                wellSection.addClass("card card-body bg-light");
+                wellSection.attr('id', 'articleWell-' + i);
+                $('#wellSection').append(wellSection);
+
+                $("#articleWell-" + i).append("<h3>" + NYTData.response.docs[i].headline.main + "</h3>");
             }
 
             console.log(queryURL);
