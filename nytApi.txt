@@ -1,3 +1,4 @@
 3BjhUi86GMAIrd3GTGFH5vCPIlKCcATh
 
-https://api.nytimes.com/svc/search/v2/articlesearch.json?q=Obama&api-key=3BjhUi86GMAIrd3GTGFH5vCPIlKCcATh
+https://api.nytimes.com/svc/search/v2/articlesearch.json?q=Obama&api-key=3BjhUi86GMAIrd3GTGFH5vCPIlKCcATh&q=Obama
+
