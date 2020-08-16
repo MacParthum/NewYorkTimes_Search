@@ -22,7 +22,38 @@
             <h3 class="card-title">Search Paramaters</h3>
           </div>
           <div class="card-body">
-            xxxxx
+           <form role="form">
+
+            <div class="form-group">
+              <label for="search">Search Term:</label>
+              <input type="text" class="form-control" id="search">
+            </div>
+
+            <div class="form-group">
+              <label for=sel1">Number of Records to Retrieve:</label>
+              <select class="form-control" id="sel1">
+                <option value=1>1</option>
+                <option value=5 selected>5</option>
+                <option value=10>10</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="startYear">Start Year</label>
+              <input type="text" class="form-control" id="startYear">
+            </div>
+
+            <div class="form-group">
+              <label for="startYear">End Year</label>
+              <input type="text" class="form-control" id="endYear">
+            </div>
+          
+            <button type="submit" class="btn btn-primary">Search</button>
+            
+            <button type="button" class="btn btn-dark">Clear</button>
+
+
+           </form> 
           </div>
         </div>
       </div>
