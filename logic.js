@@ -18,27 +18,33 @@ function runQuery(numArticles, queryURL) {
 
 
             for (var i = 0; i < numArticles; i++) {
-                console.log(NYTData.response.docs[i].headline.main);
-                console.log(NYTData.response.docs[i].section_name);
-                console.log(NYTData.response.docs[i].pub_date);
-                console.log(NYTData.response.docs[i].byline.original);
-                console.log(NYTData.response.docs[i].web_url);
 
+                
                 var wellSection = $('<div>');
                 wellSection.addClass("card card-body bg-light");
                 wellSection.attr('id', 'articleWell-' + i);
                 $('#wellSection').append(wellSection);
-                $("#articleWell-" + i).append("<h3>" + NYTData.response.docs[i].headline.main + "</h3>");
+                
+                if (NYTData.response.docs[i].headline != "null") {
+                    console.log(NYTData.response.docs[i].headline.main);
+                    $("#articleWell-" + i).append("<h3>" + NYTData.response.docs[i].headline.main + "</h3>");
+                }
+                
+                if (NYTData.response.docs[i].byline && NYTData.response.docs[i].byline.hasOwnProperty("original")) {
+                    console.log(NYTData.response.docs[i].byline.original);
+                    $("#articleWell-" + i).append("<h5>" + NYTData.response.docs[i].byline.original + "</h5>");
+                    
+                }
+                
                 $("#articleWell-" + i).append("<h5>" + NYTData.response.docs[i].section_name + "</h5>");
                 $("#articleWell-" + i).append("<h5>" + NYTData.response.docs[i].pub_date + "</h5>");
-                $("#articleWell-" + i).append("<h5>" + NYTData.response.docs[i].byline.original + "</h5>");
                 $("#articleWell-" + i).append("<a href=" + NYTData.response.docs[i].web_url + ">" + NYTData.response.docs[i].web_url + "</a>");
-
+                
+                console.log(NYTData.response.docs[i].section_name);
+                console.log(NYTData.response.docs[i].pub_date);
+                console.log(NYTData.response.docs[i].web_url);
             }
 
-            console.log(queryURL);
-            console.log(numArticles);
-            console.log(NYTData);
         })
 }
 
