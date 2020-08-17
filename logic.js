@@ -19,27 +19,26 @@ function runQuery(numArticles, queryURL) {
 
             for (var i = 0; i < numArticles; i++) {
 
-                
+
                 var wellSection = $('<div>');
-                wellSection.addClass("card card-body bg-light");
+                wellSection.addClass("card card-body shadow p3 mb-5 bg-white rounded");
                 wellSection.attr('id', 'articleWell-' + i);
                 $('#wellSection').append(wellSection);
-                
+
                 if (NYTData.response.docs[i].headline != "null") {
                     console.log(NYTData.response.docs[i].headline.main);
                     $("#articleWell-" + i).append("<h3>" + NYTData.response.docs[i].headline.main + "</h3>");
                 }
-                
+
                 if (NYTData.response.docs[i].byline && NYTData.response.docs[i].byline.hasOwnProperty("original")) {
                     console.log(NYTData.response.docs[i].byline.original);
                     $("#articleWell-" + i).append("<h5>" + NYTData.response.docs[i].byline.original + "</h5>");
-                    
                 }
-                
+
                 $("#articleWell-" + i).append("<h5>" + NYTData.response.docs[i].section_name + "</h5>");
                 $("#articleWell-" + i).append("<h5>" + NYTData.response.docs[i].pub_date + "</h5>");
                 $("#articleWell-" + i).append("<a href=" + NYTData.response.docs[i].web_url + ">" + NYTData.response.docs[i].web_url + "</a>");
-                
+
                 console.log(NYTData.response.docs[i].section_name);
                 console.log(NYTData.response.docs[i].pub_date);
                 console.log(NYTData.response.docs[i].web_url);
@@ -51,11 +50,8 @@ function runQuery(numArticles, queryURL) {
 $('#searchBtn').on('click', function () {
 
     queryTerm = $('#search').val().trim();
-
     var newURL = queryURLBase + "&q=" + queryTerm;
-
     numResults = $('#numRecords').val();
-
     startYear = $('#startYear').val().trim();
     endYear = $('#endYear').val().trim();
 
