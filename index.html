@@ -15,14 +15,16 @@
 
   <div class="container p-3 mb-2 bg-dark rounded">
     <div class="jumbotron shadow-lg p-3 mb-5 bg-secondary rounded">
-       <i class="fa fa-newspaper-o" aria-hidden="true" style="font-size:60px;color:white;"><span class="fa-icon-innter-text">&nbsp;New York Times Article Search</span></i></i>
-
+      <h1 class="text-center">
+       <i class="fa fa-newspaper-o" aria-hidden="true" style="font-size:60px;color:white;"><span class="fa-icon-innter-text">&nbsp;New York Times Search</span></i></i>
+             </h1>
     </div>
     <div class="row">
-      <div class="col-lg-12">
-        <div class="card shadow p-3 mb-5 bg-secondary rounded">
+      <div class="col-sm-12">
+        <div class="card shadow bg-secondary rounded">
           <div class="card-header">
-            <h3 class="card-title text-white">Search Paramaters</h3>
+            <!-- <h3 class="card-title text-white">Search Paramaters</h3> -->
+            <i class="fa fa-list-alt"></i> Search Paramaters</strong>
           </div>
           <div class="card-body">
             <form role="form">
@@ -42,17 +44,19 @@
               </div>
 
               <div class="form-group shadow p-3 mb-5 bg-secondary rounded">
-                <label for="startYear">Start Year</label>
+                <label for="startYear">Start Year (optional)</label>
                 <input type="text" class="form-control" id="startYear">
               </div>
 
               <div class="form-group shadow p-3 mb-5 bg-secondary rounded">
-                <label for="startYear">End Year</label>
+                <label for="startYear">End Year (optional)</label>
                 <input type="text" class="form-control" id="endYear">
               </div>
 
-              <button type="submit" class="btn btn-light shadow p-3 mb-5" id="searchBtn">Search</button>
-              <button type="button" class="btn btn-light shadow p-3 mb-5">Clear</button>
+              <button type="submit" class="btn btn-light shadow" id="searchBtn">
+                <i class="fa fa-search"></i> Search</button>
+              <button type="button" class="btn btn-light shadow" id="clearBtn">
+                <i class="fa fa-trash"></i>Clear</button>
             </form>
           </div>
         </div>
